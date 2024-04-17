@@ -1,13 +1,12 @@
 import { Request, Response } from "express";
-
-export interface IFileUploadService {
-	upload: (filename: string) => Promise<boolean>;
+export interface IFileUploader {
+	upload(file: string): void;
 }
 
-export class FileUploadService {
-	constructor(private uploader: IFileUploadService) {}
+export class FileUplaoder {
+	constructor(private uplaoder: IFileUploader) {}
 	upload(req: Request, res: Response) {
-		this.uploader.upload("song.mp3");
-		res.json({ message: "data is uploading" });
+		this.uplaoder.upload("file");
+		res.send("file is uploaded");
 	}
 }
