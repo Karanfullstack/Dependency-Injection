@@ -5,5 +5,4 @@ import { Paypal } from "./Paypal";
 const google = new Google();
 const paypal = new Paypal();
 const payment = new ApplyPayment(google);
-payment.setPayment(paypal);
 payment.applyPayment();

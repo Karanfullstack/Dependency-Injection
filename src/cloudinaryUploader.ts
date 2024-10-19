@@ -1,7 +1,7 @@
-import { IFileUploader } from "./FileUploadService";
-
-export class CloudinaryUploader implements IFileUploader {
-	upload(file: string) {
-		console.log("File is uploaded to Cloudinary" + file);
-	}
+import { UploaderI } from "./FileUploadService";
+export class Cloudinary implements UploaderI {
+    async upload(file: string) {
+        console.log("file uploading using cloudinary");
+        return true;
+    }
 }
