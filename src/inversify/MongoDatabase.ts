@@ -7,6 +7,6 @@ export interface IDatabase {
 @injectable()
 export class MongoDatabase implements IDatabase {
    getConnection(): string {
-      return "Databse connection";
+      return "Databse connection with mongodb";
    }
 }

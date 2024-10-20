@@ -5,8 +5,11 @@ import { IUserRepository, UserRepository } from "./UserRepository";
 import { IUserService, UserService } from "./UserService";
 import { UserController } from "./UserController";
 import { TYPES } from "./Types";
+import { PostgresDatabase } from "./PostgresDatabse";
 
 const container = new Container();
+
+container.bind<IDatabase>(TYPES.Postgres).to(PostgresDatabase);
 container.bind<IDatabase>(TYPES.Database).to(MongoDatabase);
 container.bind<IUserRepository>(TYPES.UserRepository).to(UserRepository);
 container.bind<IUserService>(TYPES.UserService).to(UserService);
