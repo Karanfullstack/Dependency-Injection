@@ -9,11 +9,11 @@ export class UserController {
       this.userService = userService;
    }
 
-   public getUserById = () => {
+   public getUserById() {
       const result = this.userService.getUserById("user id xxxx");
       console.log(result);
-   };
-   public createUser = () => {
+   }
+   public createUser() {
       this.userService.createUser("username:karan, lastname:karanchuhn");
-   };
+   }
 }

@@ -1,4 +1,4 @@
-import { Container, injectable } from "inversify";
+import { Container } from "inversify";
 import "reflect-metadata";
 import { IDatabase, MongoDatabase } from "./MongoDatabase";
 import { IUserRepository, UserRepository } from "./UserRepository";
@@ -9,8 +9,7 @@ import { PostgresDatabase } from "./PostgresDatabse";
 
 const container = new Container();
 
-container.bind<IDatabase>(TYPES.Postgres).to(PostgresDatabase);
-container.bind<IDatabase>(TYPES.Database).to(MongoDatabase);
+container.bind<IDatabase>(TYPES.Database).to(PostgresDatabase);
 container.bind<IUserRepository>(TYPES.UserRepository).to(UserRepository);
 container.bind<IUserService>(TYPES.UserService).to(UserService);
 container.bind<UserController>(TYPES.UserController).to(UserController);

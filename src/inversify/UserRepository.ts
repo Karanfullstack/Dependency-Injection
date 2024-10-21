@@ -11,7 +11,7 @@ export interface IUserRepository {
 export class UserRepository implements IUserRepository {
    private db: IDatabase;
 
-   constructor(@inject(TYPES.Postgres) db: IDatabase) {
+   constructor(@inject(TYPES.Database) db: IDatabase) {
       this.db = db;
    }
    getUserById(userId: string): string {
